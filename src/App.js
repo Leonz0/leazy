@@ -1,24 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+// import { useContext, useEffect } from "react";
+// import TodoContext from "./context/todo";
+
+// function App() {
+//   const { category, setCategory } = useContext(TodoContext);
+
+//   const showCategories = console.log();
+
+//   return <div className="App">{showCategories}</div>;
+// }
+
+// export default App;
+
+import { useContext } from "react";
+import TodoContext from "./context/todo";
+import TodoList from "./components/TodoList";
+
+import { DndContext, closestCenter } from "@dnd-kit/core";
+import {
+  arrayMove,
+  SortableContext,
+  verticalListSortingStrategy,
+} from "@dnd-kit/sortable";
 
 function App() {
+  const {
+    toggleForm,
+    setToggleForm,
+    btnAddItem,
+    setBtnAddItem,
+    btnSaveItem,
+    setBtnSaveButton,
+  } = useContext(TodoContext);
+
+  const handleToggleForm = () => {
+    // if (toggleForm === false) return;
+    // setToggleForm(true);
+    setBtnAddItem(!btnAddItem);
+    setBtnSaveButton(!btnSaveItem);
+  };
+
+  const handelDragEnd = (event) => {
+    console.log(event);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    // <DndContext collisionDetection={closestCenter} onDragEnd={handelDragEnd}>
+    <div onClick={handleToggleForm} className="App">
+      <TodoList handleToggleForm={handleToggleForm} />
     </div>
+    // </DndContext>
   );
 }
 

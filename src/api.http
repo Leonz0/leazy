@@ -1,0 +1,28 @@
+GET http://localhost:3002/todo HTTP/1.1
+Content-Type: application/json
+
+###
+
+POST http://localhost:3002/todo HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "",
+    "description": ""
+}
+
+###
+
+PUT http://localhost:3002/todo/1 HTTP/1.1
+Content-Type: application/json
+
+{
+     "title": "",
+    "description": ""
+}
+
+###
+
+DELETE http://localhost:3002/todo/1 HTTP/1.1
+Content-Type: application/json
+

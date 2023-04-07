@@ -1,0 +1,25 @@
+.taskContainer {
+  /* padding: 1rem 0 1rem 0; */
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  margin-bottom: 1rem;
+  background-color: rgba(13, 27, 30, 1);
+  color: white;
+  width: 22vw;
+  width: 22svw;
+  height: 5vh;
+  height: 5svh;
+  border-radius: 5px;
+}
+
+.task {
+  margin-left: 1rem;
+}
+
+/* .taskList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+} */
